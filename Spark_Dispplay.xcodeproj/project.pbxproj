@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		D37080282194179500C1C5DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37080272194179500C1C5DA /* AppDelegate.swift */; };
 		D370802A2194179500C1C5DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37080292194179500C1C5DA /* ViewController.swift */; };
-		D370802D2194179500C1C5DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D370802B2194179500C1C5DA /* Main.storyboard */; };
 		D37080302194179500C1C5DA /* Spark_Dispplay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D370802E2194179500C1C5DA /* Spark_Dispplay.xcdatamodeld */; };
 		D37080322194179500C1C5DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37080312194179500C1C5DA /* Assets.xcassets */; };
 		D37080352194179500C1C5DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D37080332194179500C1C5DA /* LaunchScreen.storyboard */; };
 		D37080402194179500C1C5DA /* Spark_DispplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370803F2194179500C1C5DA /* Spark_DispplayTests.swift */; };
 		D370804B2194179500C1C5DA /* Spark_DispplayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370804A2194179500C1C5DA /* Spark_DispplayUITests.swift */; };
+		D370805A2194181D00C1C5DA /* FactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37080592194181D00C1C5DA /* FactTableViewCell.swift */; };
+		D370805C2194194E00C1C5DA /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370805B2194194E00C1C5DA /* Fact.swift */; };
+		D370805D2194195C00C1C5DA /* fact.json in Resources */ = {isa = PBXBuildFile; fileRef = D37080582194180900C1C5DA /* fact.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,6 @@
 		D37080242194179500C1C5DA /* Spark_Dispplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spark_Dispplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37080272194179500C1C5DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D37080292194179500C1C5DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D370802C2194179500C1C5DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D370802F2194179500C1C5DA /* Spark_Dispplay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Spark_Dispplay.xcdatamodel; sourceTree = "<group>"; };
 		D37080312194179500C1C5DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D37080342194179500C1C5DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,9 @@
 		D37080462194179500C1C5DA /* Spark_DispplayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spark_DispplayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D370804A2194179500C1C5DA /* Spark_DispplayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spark_DispplayUITests.swift; sourceTree = "<group>"; };
 		D370804C2194179500C1C5DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D37080582194180900C1C5DA /* fact.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = fact.json; sourceTree = "<group>"; };
+		D37080592194181D00C1C5DA /* FactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTableViewCell.swift; sourceTree = "<group>"; };
+		D370805B2194194E00C1C5DA /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +105,13 @@
 			children = (
 				D37080272194179500C1C5DA /* AppDelegate.swift */,
 				D37080292194179500C1C5DA /* ViewController.swift */,
-				D370802B2194179500C1C5DA /* Main.storyboard */,
 				D37080312194179500C1C5DA /* Assets.xcassets */,
+				D370805B2194194E00C1C5DA /* Fact.swift */,
+				D37080582194180900C1C5DA /* fact.json */,
 				D37080332194179500C1C5DA /* LaunchScreen.storyboard */,
 				D37080362194179500C1C5DA /* Info.plist */,
 				D370802E2194179500C1C5DA /* Spark_Dispplay.xcdatamodeld */,
+				D37080592194181D00C1C5DA /* FactTableViewCell.swift */,
 			);
 			path = Spark_Dispplay;
 			sourceTree = "<group>";
@@ -235,9 +241,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D370805D2194195C00C1C5DA /* fact.json in Resources */,
 				D37080352194179500C1C5DA /* LaunchScreen.storyboard in Resources */,
 				D37080322194179500C1C5DA /* Assets.xcassets in Resources */,
-				D370802D2194179500C1C5DA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +270,9 @@
 			files = (
 				D370802A2194179500C1C5DA /* ViewController.swift in Sources */,
 				D37080282194179500C1C5DA /* AppDelegate.swift in Sources */,
+				D370805C2194194E00C1C5DA /* Fact.swift in Sources */,
 				D37080302194179500C1C5DA /* Spark_Dispplay.xcdatamodeld in Sources */,
+				D370805A2194181D00C1C5DA /* FactTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,14 +308,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D370802B2194179500C1C5DA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D370802C2194179500C1C5DA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D37080332194179500C1C5DA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
