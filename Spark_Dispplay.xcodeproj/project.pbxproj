@@ -17,6 +17,13 @@
 		D370805A2194181D00C1C5DA /* FactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37080592194181D00C1C5DA /* FactTableViewCell.swift */; };
 		D370805C2194194E00C1C5DA /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370805B2194194E00C1C5DA /* Fact.swift */; };
 		D370805D2194195C00C1C5DA /* fact.json in Resources */ = {isa = PBXBuildFile; fileRef = D37080582194180900C1C5DA /* fact.json */; };
+		D376DE892195605000C9B6A4 /* ServerApiCallsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D376DE882195605000C9B6A4 /* ServerApiCallsTest.swift */; };
+		D395AEEF21957E4A0035F5FC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395AEEE21957E4A0035F5FC /* RootViewController.swift */; };
+		D39629D621942F940034CCD6 /* ServerApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629D521942F940034CCD6 /* ServerApiCalls.swift */; };
+		D39629D8219433FF0034CCD6 /* FactCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629D7219433FF0034CCD6 /* FactCellViewModel.swift */; };
+		D39629E021945B740034CCD6 /* JsonParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629DF21945B740034CCD6 /* JsonParsing.swift */; };
+		D39629E621954F520034CCD6 /* FactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629E521954F520034CCD6 /* FactTests.swift */; };
+		D39629E8219550D00034CCD6 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629E7219550D00034CCD6 /* Mock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +60,13 @@
 		D37080582194180900C1C5DA /* fact.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = fact.json; sourceTree = "<group>"; };
 		D37080592194181D00C1C5DA /* FactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTableViewCell.swift; sourceTree = "<group>"; };
 		D370805B2194194E00C1C5DA /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
+		D376DE882195605000C9B6A4 /* ServerApiCallsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerApiCallsTest.swift; sourceTree = "<group>"; };
+		D395AEEE21957E4A0035F5FC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		D39629D521942F940034CCD6 /* ServerApiCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerApiCalls.swift; sourceTree = "<group>"; };
+		D39629D7219433FF0034CCD6 /* FactCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCellViewModel.swift; sourceTree = "<group>"; };
+		D39629DF21945B740034CCD6 /* JsonParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParsing.swift; sourceTree = "<group>"; };
+		D39629E521954F520034CCD6 /* FactTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTests.swift; sourceTree = "<group>"; };
+		D39629E7219550D00034CCD6 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,15 +117,18 @@
 		D37080262194179500C1C5DA /* Spark_Dispplay */ = {
 			isa = PBXGroup;
 			children = (
+				D39629DE219459DF0034CCD6 /* ViewController */,
+				D39629DD219459A60034CCD6 /* NetworkCalls */,
+				D39629DC2194598D0034CCD6 /* HelperFiles */,
+				D39629DB2194596A0034CCD6 /* View */,
+				D39629DA219459420034CCD6 /* ViewModel */,
+				D39629D9219457FD0034CCD6 /* Model */,
 				D37080272194179500C1C5DA /* AppDelegate.swift */,
-				D37080292194179500C1C5DA /* ViewController.swift */,
 				D37080312194179500C1C5DA /* Assets.xcassets */,
-				D370805B2194194E00C1C5DA /* Fact.swift */,
-				D37080582194180900C1C5DA /* fact.json */,
 				D37080332194179500C1C5DA /* LaunchScreen.storyboard */,
 				D37080362194179500C1C5DA /* Info.plist */,
 				D370802E2194179500C1C5DA /* Spark_Dispplay.xcdatamodeld */,
-				D37080592194181D00C1C5DA /* FactTableViewCell.swift */,
+				D39629DF21945B740034CCD6 /* JsonParsing.swift */,
 			);
 			path = Spark_Dispplay;
 			sourceTree = "<group>";
@@ -119,6 +136,11 @@
 		D370803E2194179500C1C5DA /* Spark_DispplayTests */ = {
 			isa = PBXGroup;
 			children = (
+				D395AEED219572C30035F5FC /* ViewController */,
+				D376DE872195600C00C9B6A4 /* ServerApiCalls */,
+				D39629E421954F230034CCD6 /* ViewModel */,
+				D39629E321954F1B0034CCD6 /* Mock */,
+				D39629E121954F080034CCD6 /* Model */,
 				D370803F2194179500C1C5DA /* Spark_DispplayTests.swift */,
 				D37080412194179500C1C5DA /* Info.plist */,
 			);
@@ -132,6 +154,93 @@
 				D370804C2194179500C1C5DA /* Info.plist */,
 			);
 			path = Spark_DispplayUITests;
+			sourceTree = "<group>";
+		};
+		D376DE872195600C00C9B6A4 /* ServerApiCalls */ = {
+			isa = PBXGroup;
+			children = (
+				D376DE882195605000C9B6A4 /* ServerApiCallsTest.swift */,
+			);
+			path = ServerApiCalls;
+			sourceTree = "<group>";
+		};
+		D395AEED219572C30035F5FC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D395AEEE21957E4A0035F5FC /* RootViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D39629D9219457FD0034CCD6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D370805B2194194E00C1C5DA /* Fact.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D39629DA219459420034CCD6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D39629D7219433FF0034CCD6 /* FactCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D39629DB2194596A0034CCD6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D37080592194181D00C1C5DA /* FactTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D39629DC2194598D0034CCD6 /* HelperFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D37080582194180900C1C5DA /* fact.json */,
+			);
+			path = HelperFiles;
+			sourceTree = "<group>";
+		};
+		D39629DD219459A60034CCD6 /* NetworkCalls */ = {
+			isa = PBXGroup;
+			children = (
+				D39629D521942F940034CCD6 /* ServerApiCalls.swift */,
+			);
+			path = NetworkCalls;
+			sourceTree = "<group>";
+		};
+		D39629DE219459DF0034CCD6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D37080292194179500C1C5DA /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D39629E121954F080034CCD6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D39629E521954F520034CCD6 /* FactTests.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D39629E321954F1B0034CCD6 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				D39629E7219550D00034CCD6 /* Mock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		D39629E421954F230034CCD6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,11 +377,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D39629D8219433FF0034CCD6 /* FactCellViewModel.swift in Sources */,
 				D370802A2194179500C1C5DA /* ViewController.swift in Sources */,
+				D39629E021945B740034CCD6 /* JsonParsing.swift in Sources */,
 				D37080282194179500C1C5DA /* AppDelegate.swift in Sources */,
 				D370805C2194194E00C1C5DA /* Fact.swift in Sources */,
 				D37080302194179500C1C5DA /* Spark_Dispplay.xcdatamodeld in Sources */,
 				D370805A2194181D00C1C5DA /* FactTableViewCell.swift in Sources */,
+				D39629D621942F940034CCD6 /* ServerApiCalls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +392,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D395AEEF21957E4A0035F5FC /* RootViewController.swift in Sources */,
 				D37080402194179500C1C5DA /* Spark_DispplayTests.swift in Sources */,
+				D39629E621954F520034CCD6 /* FactTests.swift in Sources */,
+				D39629E8219550D00034CCD6 /* Mock.swift in Sources */,
+				D376DE892195605000C9B6A4 /* ServerApiCallsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
