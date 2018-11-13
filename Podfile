@@ -4,6 +4,8 @@
 target 'Spark_Dispplay' do
  pod 'Alamofire', '~> 4.0'
 pod 'Alamofire-SwiftyJSON'
+pod 'ReachabilitySwift'
+
   use_frameworks!
 
   # Pods for Spark_Dispplay

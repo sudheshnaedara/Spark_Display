@@ -26,6 +26,7 @@
 		D39629E021945B740034CCD6 /* JsonParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629DF21945B740034CCD6 /* JsonParsing.swift */; };
 		D39629E621954F520034CCD6 /* FactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629E521954F520034CCD6 /* FactTests.swift */; };
 		D39629E8219550D00034CCD6 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629E7219550D00034CCD6 /* Mock.swift */; };
+		D3C2A50E219AE20800ECAE57 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2A50D219AE20800ECAE57 /* Connectivity.swift */; };
 		EFE5EC1CFF4DEAAC72B22407 /* Pods_Spark_Dispplay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468497EB3AB3156E169B58FE /* Pods_Spark_Dispplay.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		D39629DF21945B740034CCD6 /* JsonParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParsing.swift; sourceTree = "<group>"; };
 		D39629E521954F520034CCD6 /* FactTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTests.swift; sourceTree = "<group>"; };
 		D39629E7219550D00034CCD6 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		D3C2A50D219AE20800ECAE57 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				D37080582194180900C1C5DA /* fact.json */,
+				D3C2A50D219AE20800ECAE57 /* Connectivity.swift */,
 			);
 			path = HelperFiles;
 			sourceTree = "<group>";
@@ -422,15 +425,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Spark_DispplayUITests-checkManifestLockResult.txt",
 			);
@@ -444,20 +443,18 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Spark_Dispplay/Pods-Spark_Dispplay-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,15 +467,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Spark_DispplayTests-checkManifestLockResult.txt",
 			);
@@ -492,15 +485,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Spark_Dispplay-checkManifestLockResult.txt",
 			);
@@ -518,6 +507,7 @@
 			files = (
 				D39629D8219433FF0034CCD6 /* FactCellViewModel.swift in Sources */,
 				D370802A2194179500C1C5DA /* ViewController.swift in Sources */,
+				D3C2A50E219AE20800ECAE57 /* Connectivity.swift in Sources */,
 				D39629E021945B740034CCD6 /* JsonParsing.swift in Sources */,
 				D37080282194179500C1C5DA /* AppDelegate.swift in Sources */,
 				D370805C2194194E00C1C5DA /* Fact.swift in Sources */,

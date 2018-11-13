@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import ReachabilitySwift
 
 class ViewController: UIViewController , UITableViewDelegate{
     
@@ -20,19 +21,20 @@ class ViewController: UIViewController , UITableViewDelegate{
         super.viewDidLoad()
         tableview.tableFooterView = UIView()
         configureTableView()
-         APICall ()
         addPullToRefresh()
+        checkNetwork()
   }
+
     func addPullToRefresh() {
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         self.tableview.addSubview(refreshControl)
     }
     @objc func refresh(_ sender: Any) {
-          APICall ()
-        print("(pull to refresh called)")
+         checkNetwork()
+         self.refreshControl.endRefreshing()
     }
-    
+  
     func configureTableView() {
         tableview.dataSource = self
         tableview.estimatedRowHeight = 100
@@ -62,10 +64,27 @@ extension ViewController :  UITableViewDataSource{
         return cell
     }
     
+    func checkNetwork() {
+      
+        let networkStatus = ReachabilityManager.shared.reachability.currentReachabilityStatus
+        print("networkStatus ++\(networkStatus)")
+        if networkStatus  == .notReachable {
+            let alert = UIAlertController(title: "", message: "Network Not Available", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: {
+                  self.refreshControl.endRefreshing()
+            })
+        }else {
+            APICall ()
+        }
+    }
+    
     func APICall () {
+    
         Alamofire.request("https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json").responseString { responseData in
             guard responseData.result.error == nil else {
                 print(responseData.result.error!)
+                 self.refreshControl.endRefreshing()
                 return
             }
             if((responseData.result.value) != nil) {
@@ -74,9 +93,9 @@ extension ViewController :  UITableViewDataSource{
                     self.title = parsedData.title
                     self.rowArray = parsedData.rows
                     self.tableview.reloadData()
-                    self.refreshControl.endRefreshing()
                 }
             }
+             self.refreshControl.endRefreshing()
         }
     }
 }
