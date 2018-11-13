@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D351637740D8CD3B991A4EC /* Pods_Spark_DispplayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D65F0B9925BFE382C5B3C24 /* Pods_Spark_DispplayUITests.framework */; };
+		CE8219D3941338608B823872 /* Pods_Spark_DispplayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B952C2E69DF44F4A7BB8EADD /* Pods_Spark_DispplayTests.framework */; };
 		D37080282194179500C1C5DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37080272194179500C1C5DA /* AppDelegate.swift */; };
 		D370802A2194179500C1C5DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37080292194179500C1C5DA /* ViewController.swift */; };
 		D37080302194179500C1C5DA /* Spark_Dispplay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D370802E2194179500C1C5DA /* Spark_Dispplay.xcdatamodeld */; };
@@ -24,6 +26,7 @@
 		D39629E021945B740034CCD6 /* JsonParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629DF21945B740034CCD6 /* JsonParsing.swift */; };
 		D39629E621954F520034CCD6 /* FactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629E521954F520034CCD6 /* FactTests.swift */; };
 		D39629E8219550D00034CCD6 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629E7219550D00034CCD6 /* Mock.swift */; };
+		EFE5EC1CFF4DEAAC72B22407 /* Pods_Spark_Dispplay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468497EB3AB3156E169B58FE /* Pods_Spark_Dispplay.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04420E0460A73309514A9D12 /* Pods-Spark_DispplayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spark_DispplayTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spark_DispplayTests/Pods-Spark_DispplayTests.release.xcconfig"; sourceTree = "<group>"; };
+		220A5DAA807BC48BE6D6496C /* Pods-Spark_DispplayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spark_DispplayUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spark_DispplayUITests/Pods-Spark_DispplayUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		37D1C3E269764FB1515366E7 /* Pods-Spark_DispplayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spark_DispplayUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spark_DispplayUITests/Pods-Spark_DispplayUITests.release.xcconfig"; sourceTree = "<group>"; };
+		387A1F6A1FCD89030B3F13A0 /* Pods-Spark_DispplayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spark_DispplayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spark_DispplayTests/Pods-Spark_DispplayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		468497EB3AB3156E169B58FE /* Pods_Spark_Dispplay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spark_Dispplay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D65F0B9925BFE382C5B3C24 /* Pods_Spark_DispplayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spark_DispplayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A301F17F2711763D92393B8E /* Pods-Spark_Dispplay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spark_Dispplay.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spark_Dispplay/Pods-Spark_Dispplay.release.xcconfig"; sourceTree = "<group>"; };
+		A5B4F8A881774930E0BF4F57 /* Pods-Spark_Dispplay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spark_Dispplay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spark_Dispplay/Pods-Spark_Dispplay.debug.xcconfig"; sourceTree = "<group>"; };
+		B952C2E69DF44F4A7BB8EADD /* Pods_Spark_DispplayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spark_DispplayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37080242194179500C1C5DA /* Spark_Dispplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spark_Dispplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37080272194179500C1C5DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D37080292194179500C1C5DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFE5EC1CFF4DEAAC72B22407 /* Pods_Spark_Dispplay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8219D3941338608B823872 /* Pods_Spark_DispplayTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,12 +102,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D351637740D8CD3B991A4EC /* Pods_Spark_DispplayUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B04D5E50F0FF6D9179F2DAB7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5B4F8A881774930E0BF4F57 /* Pods-Spark_Dispplay.debug.xcconfig */,
+				A301F17F2711763D92393B8E /* Pods-Spark_Dispplay.release.xcconfig */,
+				387A1F6A1FCD89030B3F13A0 /* Pods-Spark_DispplayTests.debug.xcconfig */,
+				04420E0460A73309514A9D12 /* Pods-Spark_DispplayTests.release.xcconfig */,
+				220A5DAA807BC48BE6D6496C /* Pods-Spark_DispplayUITests.debug.xcconfig */,
+				37D1C3E269764FB1515366E7 /* Pods-Spark_DispplayUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D370801B2194179500C1C5DA = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +129,8 @@
 				D370803E2194179500C1C5DA /* Spark_DispplayTests */,
 				D37080492194179500C1C5DA /* Spark_DispplayUITests */,
 				D37080252194179500C1C5DA /* Products */,
+				B04D5E50F0FF6D9179F2DAB7 /* Pods */,
+				E19AFA95AA5BE55E988B9064 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -243,6 +273,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		E19AFA95AA5BE55E988B9064 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				468497EB3AB3156E169B58FE /* Pods_Spark_Dispplay.framework */,
+				B952C2E69DF44F4A7BB8EADD /* Pods_Spark_DispplayTests.framework */,
+				5D65F0B9925BFE382C5B3C24 /* Pods_Spark_DispplayUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,9 +290,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D370804F2194179500C1C5DA /* Build configuration list for PBXNativeTarget "Spark_Dispplay" */;
 			buildPhases = (
+				DFD17AD3EB74CFE137F7062D /* [CP] Check Pods Manifest.lock */,
 				D37080202194179500C1C5DA /* Sources */,
 				D37080212194179500C1C5DA /* Frameworks */,
 				D37080222194179500C1C5DA /* Resources */,
+				9B5EEE9B7C9FA8964ABF2F50 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -267,6 +309,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D37080522194179500C1C5DA /* Build configuration list for PBXNativeTarget "Spark_DispplayTests" */;
 			buildPhases = (
+				BC8C86FA95ACDE825F422836 /* [CP] Check Pods Manifest.lock */,
 				D37080372194179500C1C5DA /* Sources */,
 				D37080382194179500C1C5DA /* Frameworks */,
 				D37080392194179500C1C5DA /* Resources */,
@@ -285,6 +328,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D37080552194179500C1C5DA /* Build configuration list for PBXNativeTarget "Spark_DispplayUITests" */;
 			buildPhases = (
+				5B3C279DD47457047907B6FE /* [CP] Check Pods Manifest.lock */,
 				D37080422194179500C1C5DA /* Sources */,
 				D37080432194179500C1C5DA /* Frameworks */,
 				D37080442194179500C1C5DA /* Resources */,
@@ -371,6 +415,101 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5B3C279DD47457047907B6FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Spark_DispplayUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B5EEE9B7C9FA8964ABF2F50 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Spark_Dispplay/Pods-Spark_Dispplay-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-SwiftyJSON/Alamofire_SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spark_Dispplay/Pods-Spark_Dispplay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC8C86FA95ACDE825F422836 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Spark_DispplayTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFD17AD3EB74CFE137F7062D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Spark_Dispplay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D37080202194179500C1C5DA /* Sources */ = {
@@ -544,6 +683,7 @@
 		};
 		D37080502194179500C1C5DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5B4F8A881774930E0BF4F57 /* Pods-Spark_Dispplay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -558,6 +698,7 @@
 		};
 		D37080512194179500C1C5DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A301F17F2711763D92393B8E /* Pods-Spark_Dispplay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -572,6 +713,7 @@
 		};
 		D37080532194179500C1C5DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 387A1F6A1FCD89030B3F13A0 /* Pods-Spark_DispplayTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -588,6 +730,7 @@
 		};
 		D37080542194179500C1C5DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04420E0460A73309514A9D12 /* Pods-Spark_DispplayTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -604,6 +747,7 @@
 		};
 		D37080562194179500C1C5DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 220A5DAA807BC48BE6D6496C /* Pods-Spark_DispplayUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -619,6 +763,7 @@
 		};
 		D37080572194179500C1C5DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37D1C3E269764FB1515366E7 /* Pods-Spark_DispplayUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
