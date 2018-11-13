@@ -1,0 +1,6 @@
+framework module Pods_Spark_DispplayTests {
+  umbrella header "Pods-Spark_DispplayTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
