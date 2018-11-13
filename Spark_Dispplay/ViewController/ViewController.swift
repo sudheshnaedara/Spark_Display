@@ -12,6 +12,7 @@ import SwiftyJSON
 
 class ViewController: UIViewController , UITableViewDelegate{
     
+    var refreshControl   = UIRefreshControl()
     fileprivate let factCellReuseIdentifier = "FactTableViewCellIdentifier"
     let tableview = UITableView()
     var rowArray = [rows]()
@@ -20,7 +21,17 @@ class ViewController: UIViewController , UITableViewDelegate{
         tableview.tableFooterView = UIView()
         configureTableView()
          APICall ()
+        addPullToRefresh()
   }
+    func addPullToRefresh() {
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        self.tableview.addSubview(refreshControl)
+    }
+    @objc func refresh(_ sender: Any) {
+          APICall ()
+        print("(pull to refresh called)")
+    }
     
     func configureTableView() {
         tableview.dataSource = self
@@ -33,62 +44,37 @@ class ViewController: UIViewController , UITableViewDelegate{
         tableview.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableview.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-       
     }
-
 }
+
 extension ViewController :  UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return rowArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableview.dequeueReusableCell(withIdentifier: factCellReuseIdentifier, for: indexPath) as! FactTableViewCell
-        cell.separatorInset = UIEdgeInsets.zero
-        cell.layoutMargins = UIEdgeInsets.zero
+        guard let cell = tableview.dequeueReusableCell(withIdentifier: factCellReuseIdentifier, for: indexPath) as? FactTableViewCell  else {
+            return UITableViewCell()
+        }
         cell.accessoryType = .disclosureIndicator
-//        cell.contentView.layer.cornerRadius = 10
-//        cell.backgroundColor = UIColor.clear
-//       cell.contentView.layer.borderWidth = 5
-//        cell.contentView.layer.borderColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1).cgColor
-     //   tableView.separatorStyle = .none
          let dict = self.rowArray[indexPath.row]
         cell.viewModel = dict
         return cell
     }
-
+    
     func APICall () {
-
-//    Alamofire.request("https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json", method: .get)
-//                .validate()
-//                .responseData(completionHandler: { (responseData) in
-//                    if responseData.error != nil {
-//                        print("error\(String(describing: responseData.error))")
-//                    }
-//                    if responseData.data != nil {
-//                        DispatchQueue.main.async {
-//                            do {
-//                                let jsonData = try JSONSerialization.data(withJSONObject: responseData.data, options: .prettyPrinted)
-//                                let reqJSONStr = String(data: jsonData, encoding: .utf8)
-//                                let data = reqJSONStr?.data(using: .utf8)
-//                                print("jsonData \(jsonData), reqJSONStr \(reqJSONStr),data\(data)")
-//                            }
-//                            catch {
-//
-//                            }
-//                     //    let parsedData =   self.parseData(JSONData: responseData.data!)
-////                            self.image = UIImage(data: data)
-//                        }
-//                    }
-//                })
-
         Alamofire.request("https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json").responseString { responseData in
+            guard responseData.result.error == nil else {
+                print(responseData.result.error!)
+                return
+            }
             if((responseData.result.value) != nil) {
                 if let data = responseData.result.value?.data(using: .utf8) {
                     let parsedData =  parseData(JSONData: data)
                     self.title = parsedData.title
                     self.rowArray = parsedData.rows
                     self.tableview.reloadData()
+                    self.refreshControl.endRefreshing()
                 }
             }
         }
