@@ -11,6 +11,12 @@ import UIKit
 
 open class StyleKit : NSObject {
 
-  static var boldNavigationButtonItemFont : UIFont = UIFont(name: "Helvetica-Bold", size: 17)!
- static let gray_DFE0E3 = UIColor(red: 223.0/255, green: 224.0/255, blue: 227.0/255, alpha: 100.0/100)
+    static var tbleBackgroundLightGray = UIColor.init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
+    static var navBackgroundBlue = UIColor.init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
+    static var white = UIColor.white
+    static var lightGray = UIColor.lightGray
+    
+    static var titleLableFont : UIFont = UIFont(name: "AvenirNext-DemiBold", size: 16)!
+    static var descLableFont : UIFont = UIFont(name: "Avenir-Book", size: 13.5)!
+    
 }

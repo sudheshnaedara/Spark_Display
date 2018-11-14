@@ -27,7 +27,7 @@ class FactTableViewCell: UITableViewCell {
         titleLabel.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 16)
+        titleLabel.font = StyleKit.titleLableFont
         
         // configure descriptionLabel
         contentView.addSubview(descriptionLabel)
@@ -36,8 +36,8 @@ class FactTableViewCell: UITableViewCell {
         descriptionLabel.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
         descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.font = UIFont(name: "Avenir-Book", size: 13.5)
-        descriptionLabel.textColor = UIColor.lightGray
+        descriptionLabel.font = StyleKit.descLableFont
+        descriptionLabel.textColor = StyleKit.lightGray
         
         //configure imageView
         contentView.addSubview(imgView)

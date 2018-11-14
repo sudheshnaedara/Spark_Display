@@ -26,16 +26,16 @@ class ViewController: UIViewController , UITableViewDelegate{
     }
     
     func configureNavigationBar() {
-        let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        let textAttributes = [NSAttributedStringKey.foregroundColor:StyleKit.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 0/255, green: 51/255, blue: 160/255, alpha: 1.0)
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = StyleKit.navBackgroundBlue
+        self.navigationController?.navigationBar.tintColor = StyleKit.white
     }
     
     func pullToRefresh() {
         refreshControl.attributedTitle = NSAttributedString(string: "Loading...")
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        refreshControl.tintColor = UIColor.lightGray
+        refreshControl.tintColor = StyleKit.lightGray
         self.tableview.addSubview(refreshControl)
     }
     @objc func refresh(_ sender: Any) {
@@ -44,7 +44,7 @@ class ViewController: UIViewController , UITableViewDelegate{
     
     func configureTableView() {
         tableview.dataSource = self
-        tableview.backgroundColor = UIColor.init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
+        tableview.backgroundColor = StyleKit.tbleBackgroundLightGray
         tableview.estimatedRowHeight = 100
         tableview.rowHeight = UITableViewAutomaticDimension
         tableview.register(FactTableViewCell.self, forCellReuseIdentifier: factCellReuseIdentifier)
@@ -68,7 +68,7 @@ extension ViewController :  UITableViewDataSource{
             return UITableViewCell()
         }
         cell.accessoryType = .disclosureIndicator
-        let color = UIColor.init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
+        let color = StyleKit.tbleBackgroundLightGray
         cell.layer.borderColor = color.cgColor
         cell.layer.borderWidth = 5
         cell.layer.cornerRadius = 15
