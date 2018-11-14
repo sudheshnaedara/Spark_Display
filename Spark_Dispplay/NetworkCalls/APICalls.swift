@@ -12,9 +12,16 @@ import Alamofire
 extension ViewController {
     func factAPICall () {
         Alamofire.request("https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json").responseString { responseData in
-            guard responseData.result.error == nil else {
-                self.refreshControl.endRefreshing()
-                return
+
+                if let err = responseData.result.error {
+                    let errorMessage = messageFromError(error: err as NSError)
+                     let alertController = UIAlertController(title: errorMessage.0, message: errorMessage.1, preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title:  StyleKit.okAlertText, style: UIAlertActionStyle.default,handler: { action in
+                        self.refreshControl.endRefreshing()
+                    }))
+                    self.present(alertController, animated: true, completion: {
+                        alertController.view.tintColor = StyleKit.red
+                    })
             }
             if((responseData.result.value) != nil) {
                 if let data = responseData.result.value?.data(using: .utf8) {
