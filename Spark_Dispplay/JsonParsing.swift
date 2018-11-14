@@ -8,29 +8,12 @@
 
 import Foundation
 
-//func jsonDecode() -> fact {
-//
-//    if let path = Bundle.main.path(forResource: "fact", ofType: "json") {
-//        do {
-//            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-//            let jsonData = try JSONDecoder().decode(fact.self, from: data)
-//            return jsonData
-////            title = jsonData.title
-////            rowArray = jsonData.rows
-//        } catch {
-//            print(error)
-//        }
-//    }
-//    return fact(title: nil, rows: [rows]())
-//}
-
-
-func parseData(JSONData: Data) -> fact {
+func parseData(JSONData: Data) -> Fact {
     do {
-        let jsonData = try JSONDecoder().decode(fact.self, from: JSONData)
+        let jsonData = try JSONDecoder().decode(Fact.self, from: JSONData)
         return jsonData
     } catch {
         print(error)
     }
-    return fact(title: nil, rows: [rows]())
+    return Fact(title: nil, rows: [Rows]())
 }

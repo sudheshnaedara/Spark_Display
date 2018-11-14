@@ -15,7 +15,7 @@ class ViewController: UIViewController , UITableViewDelegate{
     var refreshControl   = UIRefreshControl()
     fileprivate let factCellReuseIdentifier = "FactTableViewCellIdentifier"
     let tableview = UITableView()
-    var rowArray = [rows]()
+    var rowArray = [Rows]()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.tableFooterView = UIView()
@@ -73,8 +73,8 @@ extension ViewController :  UITableViewDataSource{
         cell.layer.borderWidth = 5
         cell.layer.cornerRadius = 15
         cell.clipsToBounds = true
- if cell.imgView.image == nil {
- cell.imgView.image = UIImage(named: "NoImg")
+        if cell.imgView.image == nil {
+            cell.imgView.image = UIImage(named: "NoImg")
   }
         let dict = self.rowArray[indexPath.row]
         cell.viewModel = dict
@@ -94,7 +94,6 @@ extension ViewController :  UITableViewDataSource{
             factAPICall ()
         }
     }
-    
 }
 
 

@@ -9,14 +9,14 @@
 import Foundation
 
 protocol FactCellViewModel {
-    var rowItem: rows { get }
+    var rowItem: Rows { get }
     var titleText: String? { get }
     var descriptionText: String? { get }
     var imageHrefUrl: URL? { get }
 }
 
-extension rows: FactCellViewModel {
-    var rowItem: rows {
+extension Rows: FactCellViewModel {
+    var rowItem: Rows {
         return self
     }
     var titleText: String? {

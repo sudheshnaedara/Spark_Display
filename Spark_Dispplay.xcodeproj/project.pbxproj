@@ -28,6 +28,7 @@
 		D39629E8219550D00034CCD6 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629E7219550D00034CCD6 /* Mock.swift */; };
 		D3C2A50E219AE20800ECAE57 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2A50D219AE20800ECAE57 /* Connectivity.swift */; };
 		D3C2A510219BDF0000ECAE57 /* APICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2A50F219BDF0000ECAE57 /* APICalls.swift */; };
+		D3C2A512219BE83100ECAE57 /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2A511219BE83100ECAE57 /* StyleKit.swift */; };
 		EFE5EC1CFF4DEAAC72B22407 /* Pods_Spark_Dispplay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468497EB3AB3156E169B58FE /* Pods_Spark_Dispplay.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		D39629E7219550D00034CCD6 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		D3C2A50D219AE20800ECAE57 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		D3C2A50F219BDF0000ECAE57 /* APICalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICalls.swift; sourceTree = "<group>"; };
+		D3C2A511219BE83100ECAE57 /* StyleKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 			children = (
 				D37080582194180900C1C5DA /* fact.json */,
 				D3C2A50D219AE20800ECAE57 /* Connectivity.swift */,
+				D3C2A511219BE83100ECAE57 /* StyleKit.swift */,
 			);
 			path = HelperFiles;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				D39629D8219433FF0034CCD6 /* FactCellViewModel.swift in Sources */,
 				D370802A2194179500C1C5DA /* ViewController.swift in Sources */,
 				D3C2A50E219AE20800ECAE57 /* Connectivity.swift in Sources */,
+				D3C2A512219BE83100ECAE57 /* StyleKit.swift in Sources */,
 				D39629E021945B740034CCD6 /* JsonParsing.swift in Sources */,
 				D37080282194179500C1C5DA /* AppDelegate.swift in Sources */,
 				D370805C2194194E00C1C5DA /* Fact.swift in Sources */,

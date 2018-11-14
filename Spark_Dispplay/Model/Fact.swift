@@ -7,12 +7,12 @@
 //
 
 import Foundation
-struct fact : Codable {
+struct Fact : Codable {
     let title: String?
-    let rows: [rows]
+    let rows: [Rows]
 }
 
-struct rows : Codable {
+struct Rows : Codable {
     let title : String?
     let description : String?
     let imageHref : URL?
