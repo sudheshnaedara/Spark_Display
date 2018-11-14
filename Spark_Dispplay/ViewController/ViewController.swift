@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 import SwiftyJSON
 import ReachabilitySwift
 
@@ -21,26 +20,36 @@ class ViewController: UIViewController , UITableViewDelegate{
         super.viewDidLoad()
         tableview.tableFooterView = UIView()
         configureTableView()
-        addPullToRefresh()
-        checkNetwork()
-  }
-
-    func addPullToRefresh() {
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        configureNavigationBar()
+        pullToRefresh()
+        checkNetworkConnection()
+    }
+    
+    func configureNavigationBar() {
+        let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 0/255, green: 51/255, blue: 160/255, alpha: 1.0)
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+    }
+    
+    func pullToRefresh() {
+        refreshControl.attributedTitle = NSAttributedString(string: "Loading...")
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        refreshControl.tintColor = UIColor.lightGray
         self.tableview.addSubview(refreshControl)
     }
     @objc func refresh(_ sender: Any) {
-         checkNetwork()
-         self.refreshControl.endRefreshing()
+        checkNetworkConnection()
     }
-  
+    
     func configureTableView() {
         tableview.dataSource = self
+        tableview.backgroundColor = UIColor.init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
         tableview.estimatedRowHeight = 100
         tableview.rowHeight = UITableViewAutomaticDimension
         tableview.register(FactTableViewCell.self, forCellReuseIdentifier: factCellReuseIdentifier)
         view.addSubview(tableview)
+        
         tableview.translatesAutoresizingMaskIntoConstraints = false
         tableview.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableview.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -51,7 +60,7 @@ class ViewController: UIViewController , UITableViewDelegate{
 
 extension ViewController :  UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return rowArray.count
+        return rowArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,45 +68,33 @@ extension ViewController :  UITableViewDataSource{
             return UITableViewCell()
         }
         cell.accessoryType = .disclosureIndicator
-         let dict = self.rowArray[indexPath.row]
+        let color = UIColor.init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
+        cell.layer.borderColor = color.cgColor
+        cell.layer.borderWidth = 5
+        cell.layer.cornerRadius = 15
+        cell.clipsToBounds = true
+ if cell.imgView.image == nil {
+ cell.imgView.image = UIImage(named: "NoImg")
+  }
+        let dict = self.rowArray[indexPath.row]
         cell.viewModel = dict
         return cell
     }
     
-    func checkNetwork() {
-      
+    func checkNetworkConnection() {
+        refreshControl.beginRefreshing()
         let networkStatus = ReachabilityManager.shared.reachability.currentReachabilityStatus
-        print("networkStatus ++\(networkStatus)")
         if networkStatus  == .notReachable {
-            let alert = UIAlertController(title: "", message: "Network Not Available", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: {
-                  self.refreshControl.endRefreshing()
-            })
+            let alert = UIAlertController(title: "", message: "Please check your Internet connection", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: { action in
+                self.refreshControl.endRefreshing()
+            }))
+            self.present(alert, animated: true, completion: nil)
         }else {
-            APICall ()
+            factAPICall ()
         }
     }
     
-    func APICall () {
-    
-        Alamofire.request("https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json").responseString { responseData in
-            guard responseData.result.error == nil else {
-                print(responseData.result.error!)
-                 self.refreshControl.endRefreshing()
-                return
-            }
-            if((responseData.result.value) != nil) {
-                if let data = responseData.result.value?.data(using: .utf8) {
-                    let parsedData =  parseData(JSONData: data)
-                    self.title = parsedData.title
-                    self.rowArray = parsedData.rows
-                    self.tableview.reloadData()
-                }
-            }
-             self.refreshControl.endRefreshing()
-        }
-    }
 }
 
 

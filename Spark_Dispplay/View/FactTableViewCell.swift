@@ -44,11 +44,10 @@ class FactTableViewCell: UITableViewCell {
         imgView.translatesAutoresizingMaskIntoConstraints = false
         imgView.contentMode = .scaleAspectFill
         imgView.leadingAnchor.constraint(equalTo: descriptionLabel.trailingAnchor, constant: 10).isActive = true
-        imgView.topAnchor.constraint(equalTo: titleLabel.topAnchor).isActive = true
         imgView.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
-        //    imgView.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor,constant: -10).isActive = true
         imgView.widthAnchor.constraint(equalToConstant: 45).isActive = true
         imgView.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        imgView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -65,7 +64,7 @@ class FactTableViewCell: UITableViewCell {
     }
     private func bindViewModel() {
         titleLabel.text = viewModel?.titleText ?? "Title Not Available"
-        descriptionLabel.text = viewModel?.descriptionText ?? "Descrition Not Available"
+        descriptionLabel.text = viewModel?.descriptionText ?? "Description Not Available"
         if let imageString = viewModel?.imageHrefUrl {
             imgView.downloaded(from: imageString)
         }

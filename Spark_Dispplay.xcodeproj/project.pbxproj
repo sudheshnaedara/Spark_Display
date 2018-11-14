@@ -21,12 +21,13 @@
 		D370805D2194195C00C1C5DA /* fact.json in Resources */ = {isa = PBXBuildFile; fileRef = D37080582194180900C1C5DA /* fact.json */; };
 		D376DE892195605000C9B6A4 /* ServerApiCallsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D376DE882195605000C9B6A4 /* ServerApiCallsTest.swift */; };
 		D395AEEF21957E4A0035F5FC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395AEEE21957E4A0035F5FC /* RootViewController.swift */; };
-		D39629D621942F940034CCD6 /* ServerApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629D521942F940034CCD6 /* ServerApiCalls.swift */; };
+		D39629D621942F940034CCD6 /* image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629D521942F940034CCD6 /* image.swift */; };
 		D39629D8219433FF0034CCD6 /* FactCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629D7219433FF0034CCD6 /* FactCellViewModel.swift */; };
 		D39629E021945B740034CCD6 /* JsonParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629DF21945B740034CCD6 /* JsonParsing.swift */; };
 		D39629E621954F520034CCD6 /* FactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629E521954F520034CCD6 /* FactTests.swift */; };
 		D39629E8219550D00034CCD6 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629E7219550D00034CCD6 /* Mock.swift */; };
 		D3C2A50E219AE20800ECAE57 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2A50D219AE20800ECAE57 /* Connectivity.swift */; };
+		D3C2A510219BDF0000ECAE57 /* APICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2A50F219BDF0000ECAE57 /* APICalls.swift */; };
 		EFE5EC1CFF4DEAAC72B22407 /* Pods_Spark_Dispplay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468497EB3AB3156E169B58FE /* Pods_Spark_Dispplay.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,12 +76,13 @@
 		D370805B2194194E00C1C5DA /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 		D376DE882195605000C9B6A4 /* ServerApiCallsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerApiCallsTest.swift; sourceTree = "<group>"; };
 		D395AEEE21957E4A0035F5FC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		D39629D521942F940034CCD6 /* ServerApiCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerApiCalls.swift; sourceTree = "<group>"; };
+		D39629D521942F940034CCD6 /* image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = image.swift; sourceTree = "<group>"; };
 		D39629D7219433FF0034CCD6 /* FactCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCellViewModel.swift; sourceTree = "<group>"; };
 		D39629DF21945B740034CCD6 /* JsonParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParsing.swift; sourceTree = "<group>"; };
 		D39629E521954F520034CCD6 /* FactTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTests.swift; sourceTree = "<group>"; };
 		D39629E7219550D00034CCD6 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		D3C2A50D219AE20800ECAE57 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		D3C2A50F219BDF0000ECAE57 /* APICalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICalls.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 		D39629DB2194596A0034CCD6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D39629D521942F940034CCD6 /* image.swift */,
 				D37080592194181D00C1C5DA /* FactTableViewCell.swift */,
 			);
 			path = View;
@@ -240,7 +243,7 @@
 		D39629DD219459A60034CCD6 /* NetworkCalls */ = {
 			isa = PBXGroup;
 			children = (
-				D39629D521942F940034CCD6 /* ServerApiCalls.swift */,
+				D3C2A50F219BDF0000ECAE57 /* APICalls.swift */,
 			);
 			path = NetworkCalls;
 			sourceTree = "<group>";
@@ -513,7 +516,8 @@
 				D370805C2194194E00C1C5DA /* Fact.swift in Sources */,
 				D37080302194179500C1C5DA /* Spark_Dispplay.xcdatamodeld in Sources */,
 				D370805A2194181D00C1C5DA /* FactTableViewCell.swift in Sources */,
-				D39629D621942F940034CCD6 /* ServerApiCalls.swift in Sources */,
+				D3C2A510219BDF0000ECAE57 /* APICalls.swift in Sources */,
+				D39629D621942F940034CCD6 /* image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

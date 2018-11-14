@@ -6,25 +6,15 @@
 //  Copyright © 2018 Ibrahim. All rights reserved.
 //
 import Foundation
-import ReachabilitySwift // 1 Importing the Library
+import ReachabilitySwift
 
 class ReachabilityManager: NSObject {
+    static let shared = ReachabilityManager()
     
-    static let shared = ReachabilityManager()  // 2. Shared instance
-    
-    // 3. Boolean to track network reachability
-    var isNetworkAvailable : Bool {
-        return reachabilityStatus != .notReachable
-    }
-    
-    // 4. Tracks current NetworkStatus (notReachable, reachableViaWiFi, reachableViaWWAN)
+    // Tracks current NetworkStatus (notReachable, reachableViaWiFi, reachableViaWWAN)
     var reachabilityStatus: Reachability.NetworkStatus = .notReachable
     
-    // 5. Reachibility instance for Network status monitoring
     let reachability = Reachability()!
-    
-    
-    
     
     /// Called whenever there is a change in NetworkReachibility Status
     ///
@@ -41,10 +31,8 @@ class ReachabilityManager: NSObject {
         }
     }
     
-    
     /// Starts monitoring the network availability status
     func startMonitoring() {
-        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.reachabilityChanged),
                                                name: ReachabilityChangedNotification,
