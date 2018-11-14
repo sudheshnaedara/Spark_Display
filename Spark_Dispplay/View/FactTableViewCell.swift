@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class FactTableViewCell: UITableViewCell {
     
     let titleLabel = UILabel()
@@ -63,8 +64,8 @@ class FactTableViewCell: UITableViewCell {
         }
     }
     private func bindViewModel() {
-        titleLabel.text = viewModel?.titleText ?? "Title Not Available"
-        descriptionLabel.text = viewModel?.descriptionText ?? "Description Not Available"
+        titleLabel.text = viewModel?.titleText ?? StyleKit.titleNotAvailableText
+        descriptionLabel.text = viewModel?.descriptionText ?? StyleKit.descNotAvailableText
         if let imageString = viewModel?.imageHrefUrl {
             imgView.downloaded(from: imageString)
         }

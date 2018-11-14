@@ -19,4 +19,13 @@ open class StyleKit : NSObject {
     static var titleLableFont : UIFont = UIFont(name: "AvenirNext-DemiBold", size: 16)!
     static var descLableFont : UIFont = UIFont(name: "Avenir-Book", size: 13.5)!
     
+     open class var titleNotAvailableText : String { return NSLocalizedString("Title not Available", comment: "Title Not Available") }
+     open class var descNotAvailableText : String { return NSLocalizedString("Description not Available", comment: " Description Not Available") }
+    
+    open class var cellIdentifier : String { return NSLocalizedString("FactTableViewCellIdentifier", comment: "FactTableViewCellIdentifier") }
+    open class var refreshText : String { return NSLocalizedString("Loading...", comment: "Loading...") }
+    
+    open class var networkAlertText : String { return NSLocalizedString("Please check your Internet connection", comment: "Please check your Internet connection") }
+     open class var okAlertText : String { return NSLocalizedString("OK", comment: "OK") }
+    
 }

@@ -18,7 +18,6 @@
 		D370804B2194179500C1C5DA /* Spark_DispplayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370804A2194179500C1C5DA /* Spark_DispplayUITests.swift */; };
 		D370805A2194181D00C1C5DA /* FactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37080592194181D00C1C5DA /* FactTableViewCell.swift */; };
 		D370805C2194194E00C1C5DA /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370805B2194194E00C1C5DA /* Fact.swift */; };
-		D370805D2194195C00C1C5DA /* fact.json in Resources */ = {isa = PBXBuildFile; fileRef = D37080582194180900C1C5DA /* fact.json */; };
 		D376DE892195605000C9B6A4 /* ServerApiCallsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D376DE882195605000C9B6A4 /* ServerApiCallsTest.swift */; };
 		D395AEEF21957E4A0035F5FC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395AEEE21957E4A0035F5FC /* RootViewController.swift */; };
 		D39629D621942F940034CCD6 /* image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629D521942F940034CCD6 /* image.swift */; };
@@ -72,7 +71,6 @@
 		D37080462194179500C1C5DA /* Spark_DispplayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spark_DispplayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D370804A2194179500C1C5DA /* Spark_DispplayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spark_DispplayUITests.swift; sourceTree = "<group>"; };
 		D370804C2194179500C1C5DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D37080582194180900C1C5DA /* fact.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = fact.json; sourceTree = "<group>"; };
 		D37080592194181D00C1C5DA /* FactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTableViewCell.swift; sourceTree = "<group>"; };
 		D370805B2194194E00C1C5DA /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 		D376DE882195605000C9B6A4 /* ServerApiCallsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerApiCallsTest.swift; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				D37080332194179500C1C5DA /* LaunchScreen.storyboard */,
 				D37080362194179500C1C5DA /* Info.plist */,
 				D370802E2194179500C1C5DA /* Spark_Dispplay.xcdatamodeld */,
-				D39629DF21945B740034CCD6 /* JsonParsing.swift */,
 			);
 			path = Spark_Dispplay;
 			sourceTree = "<group>";
@@ -236,7 +233,7 @@
 		D39629DC2194598D0034CCD6 /* HelperFiles */ = {
 			isa = PBXGroup;
 			children = (
-				D37080582194180900C1C5DA /* fact.json */,
+				D39629DF21945B740034CCD6 /* JsonParsing.swift */,
 				D3C2A50D219AE20800ECAE57 /* Connectivity.swift */,
 				D3C2A511219BE83100ECAE57 /* StyleKit.swift */,
 			);
@@ -403,7 +400,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D370805D2194195C00C1C5DA /* fact.json in Resources */,
 				D37080352194179500C1C5DA /* LaunchScreen.storyboard in Resources */,
 				D37080322194179500C1C5DA /* Assets.xcassets in Resources */,
 			);

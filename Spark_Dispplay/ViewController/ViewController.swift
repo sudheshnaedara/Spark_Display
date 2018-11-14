@@ -13,7 +13,7 @@ import ReachabilitySwift
 class ViewController: UIViewController , UITableViewDelegate{
     
     var refreshControl   = UIRefreshControl()
-    fileprivate let factCellReuseIdentifier = "FactTableViewCellIdentifier"
+    fileprivate let factCellReuseIdentifier = StyleKit.cellIdentifier
     let tableview = UITableView()
     var rowArray = [Rows]()
     override func viewDidLoad() {
@@ -33,7 +33,7 @@ class ViewController: UIViewController , UITableViewDelegate{
     }
     
     func pullToRefresh() {
-        refreshControl.attributedTitle = NSAttributedString(string: "Loading...")
+        refreshControl.attributedTitle = NSAttributedString(string: StyleKit.refreshText)
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         refreshControl.tintColor = StyleKit.lightGray
         self.tableview.addSubview(refreshControl)
@@ -85,8 +85,8 @@ extension ViewController :  UITableViewDataSource{
         refreshControl.beginRefreshing()
         let networkStatus = ReachabilityManager.shared.reachability.currentReachabilityStatus
         if networkStatus  == .notReachable {
-            let alert = UIAlertController(title: "", message: "Please check your Internet connection", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: { action in
+            let alert = UIAlertController(title: "", message: StyleKit.networkAlertText, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:  StyleKit.okAlertText, style: UIAlertActionStyle.default,handler: { action in
                 self.refreshControl.endRefreshing()
             }))
             self.present(alert, animated: true, completion: nil)
