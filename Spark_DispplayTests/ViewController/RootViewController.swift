@@ -98,11 +98,14 @@ class RootViewController: XCTestCase {
 //         XCTAssertEqual("Beavers are second only to humans in their ability to manipulate and change their environment. They can measure up to 1.3 metres long. A group of beavers is called a colony", factCell?.descriptionLabel.text)
 //    }
 //
+
     
     func testRefresh() {
-        XCTAssertTrue((initialVC?.responds(to: #selector(initialVC?.refresh(_:))))!)
-        XCTAssert(((initialVC?.refresh) != nil), "Refresh should have been called")
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(initialVC, action: #selector(ViewController.refresh(_:)), for: .valueChanged)
+        refreshControl.sendActions(for: .valueChanged)
     }
+
     
     func testPerformanceExample() {
         // This is an example of a performance test case.

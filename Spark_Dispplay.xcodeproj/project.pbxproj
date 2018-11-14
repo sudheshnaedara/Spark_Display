@@ -11,7 +11,6 @@
 		CE8219D3941338608B823872 /* Pods_Spark_DispplayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B952C2E69DF44F4A7BB8EADD /* Pods_Spark_DispplayTests.framework */; };
 		D37080282194179500C1C5DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37080272194179500C1C5DA /* AppDelegate.swift */; };
 		D370802A2194179500C1C5DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37080292194179500C1C5DA /* ViewController.swift */; };
-		D37080302194179500C1C5DA /* Spark_Dispplay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D370802E2194179500C1C5DA /* Spark_Dispplay.xcdatamodeld */; };
 		D37080322194179500C1C5DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37080312194179500C1C5DA /* Assets.xcassets */; };
 		D37080352194179500C1C5DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D37080332194179500C1C5DA /* LaunchScreen.storyboard */; };
 		D37080402194179500C1C5DA /* Spark_DispplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370803F2194179500C1C5DA /* Spark_DispplayTests.swift */; };
@@ -62,7 +61,6 @@
 		D37080242194179500C1C5DA /* Spark_Dispplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spark_Dispplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37080272194179500C1C5DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D37080292194179500C1C5DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D370802F2194179500C1C5DA /* Spark_Dispplay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Spark_Dispplay.xcdatamodel; sourceTree = "<group>"; };
 		D37080312194179500C1C5DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D37080342194179500C1C5DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D37080362194179500C1C5DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 				D37080312194179500C1C5DA /* Assets.xcassets */,
 				D37080332194179500C1C5DA /* LaunchScreen.storyboard */,
 				D37080362194179500C1C5DA /* Info.plist */,
-				D370802E2194179500C1C5DA /* Spark_Dispplay.xcdatamodeld */,
 			);
 			path = Spark_Dispplay;
 			sourceTree = "<group>";
@@ -518,7 +515,6 @@
 				D39629E021945B740034CCD6 /* JsonParsing.swift in Sources */,
 				D37080282194179500C1C5DA /* AppDelegate.swift in Sources */,
 				D370805C2194194E00C1C5DA /* Fact.swift in Sources */,
-				D37080302194179500C1C5DA /* Spark_Dispplay.xcdatamodeld in Sources */,
 				D370805A2194181D00C1C5DA /* FactTableViewCell.swift in Sources */,
 				D3C2A510219BDF0000ECAE57 /* APICalls.swift in Sources */,
 				D39629D621942F940034CCD6 /* image.swift in Sources */,
@@ -815,19 +811,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		D370802E2194179500C1C5DA /* Spark_Dispplay.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D370802F2194179500C1C5DA /* Spark_Dispplay.xcdatamodel */,
-			);
-			currentVersion = D370802F2194179500C1C5DA /* Spark_Dispplay.xcdatamodel */;
-			path = Spark_Dispplay.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D370801C2194179500C1C5DA /* Project object */;
 }
