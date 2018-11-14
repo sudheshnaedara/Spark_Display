@@ -12,7 +12,7 @@ import UIKit
 open class StyleKit : NSObject {
 
     static var tbleBackgroundLightGray = UIColor.init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
-    static var navBackgroundBlue = UIColor.init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
+    static var navBackgroundBlue = UIColor.init(red: 0/255, green: 51/255, blue: 160/255, alpha: 1.0)
     static var white = UIColor.white
     static var lightGray = UIColor.lightGray
     
