@@ -19,9 +19,7 @@ extension ViewController {
                     alertController.addAction(UIAlertAction(title:  StyleKit.okAlertText, style: UIAlertActionStyle.default,handler: { action in
                         self.refreshControl.endRefreshing()
                     }))
-                    self.present(alertController, animated: true, completion: {
-                        alertController.view.tintColor = StyleKit.red
-                    })
+                    self.present(alertController, animated: true, completion: nil)
             }
             if((responseData.result.value) != nil) {
                 if let data = responseData.result.value?.data(using: .utf8) {
