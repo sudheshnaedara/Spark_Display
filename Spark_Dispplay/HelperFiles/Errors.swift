@@ -28,29 +28,3 @@ func messageFromError(error: NSError!) -> (String, String) {
     return (title, message)
 }
 
-func errorFromJson(errorMessage:String ,errorCode: String) -> (String, String) {
-        var title: String = ""
-        var message: String = ""
-        
-        if (errorCode !=  "") {
-            switch (errorCode) {
-            case "301":
-                title = NSLocalizedString("",comment:"")
-                message = NSLocalizedString("Please Change your network and try again",comment:"Please Change your network and try again")
-            case "311":
-                title = NSLocalizedString("",comment:"")
-                message = NSLocalizedString("Please Change your network and try again",comment:"Please Change your network and try again")
-                
-            default:
-                title = NSLocalizedString("Alert",comment:"Error")
-                message = "\(errorMessage)"
-            }
-        }
-        else {
-            title = NSLocalizedString("Alert",comment:"")
-            message = NSLocalizedString("Please try again later",comment: "")
-            return (title, message)
-        }
-        
-        return (title, message)
-}

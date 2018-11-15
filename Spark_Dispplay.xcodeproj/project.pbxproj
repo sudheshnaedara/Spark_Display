@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0D351637740D8CD3B991A4EC /* Pods_Spark_DispplayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D65F0B9925BFE382C5B3C24 /* Pods_Spark_DispplayUITests.framework */; };
 		CE8219D3941338608B823872 /* Pods_Spark_DispplayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B952C2E69DF44F4A7BB8EADD /* Pods_Spark_DispplayTests.framework */; };
-		D33C19C8219C4445002253C3 /* JsonParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33C19C7219C4445002253C3 /* JsonParsing.swift */; };
 		D37080282194179500C1C5DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37080272194179500C1C5DA /* AppDelegate.swift */; };
 		D370802A2194179500C1C5DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37080292194179500C1C5DA /* ViewController.swift */; };
 		D37080322194179500C1C5DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37080312194179500C1C5DA /* Assets.xcassets */; };
@@ -23,7 +22,6 @@
 		D39629D8219433FF0034CCD6 /* FactCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629D7219433FF0034CCD6 /* FactCellViewModel.swift */; };
 		D39629E021945B740034CCD6 /* JsonParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629DF21945B740034CCD6 /* JsonParsing.swift */; };
 		D39629E621954F520034CCD6 /* FactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629E521954F520034CCD6 /* FactTests.swift */; };
-		D39629E8219550D00034CCD6 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39629E7219550D00034CCD6 /* Mock.swift */; };
 		D3C2A50E219AE20800ECAE57 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2A50D219AE20800ECAE57 /* Connectivity.swift */; };
 		D3C2A510219BDF0000ECAE57 /* APICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2A50F219BDF0000ECAE57 /* APICalls.swift */; };
 		D3C2A512219BE83100ECAE57 /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2A511219BE83100ECAE57 /* StyleKit.swift */; };
@@ -58,7 +56,6 @@
 		A301F17F2711763D92393B8E /* Pods-Spark_Dispplay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spark_Dispplay.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spark_Dispplay/Pods-Spark_Dispplay.release.xcconfig"; sourceTree = "<group>"; };
 		A5B4F8A881774930E0BF4F57 /* Pods-Spark_Dispplay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spark_Dispplay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spark_Dispplay/Pods-Spark_Dispplay.debug.xcconfig"; sourceTree = "<group>"; };
 		B952C2E69DF44F4A7BB8EADD /* Pods_Spark_DispplayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spark_DispplayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D33C19C7219C4445002253C3 /* JsonParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParsing.swift; sourceTree = "<group>"; };
 		D37080242194179500C1C5DA /* Spark_Dispplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spark_Dispplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37080272194179500C1C5DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D37080292194179500C1C5DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +75,6 @@
 		D39629D7219433FF0034CCD6 /* FactCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCellViewModel.swift; sourceTree = "<group>"; };
 		D39629DF21945B740034CCD6 /* JsonParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParsing.swift; sourceTree = "<group>"; };
 		D39629E521954F520034CCD6 /* FactTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTests.swift; sourceTree = "<group>"; };
-		D39629E7219550D00034CCD6 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		D3C2A50D219AE20800ECAE57 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		D3C2A50F219BDF0000ECAE57 /* APICalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICalls.swift; sourceTree = "<group>"; };
 		D3C2A511219BE83100ECAE57 /* StyleKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleKit.swift; sourceTree = "<group>"; };
@@ -191,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				D395AEEE21957E4A0035F5FC /* RootViewController.swift */,
-				D33C19C7219C4445002253C3 /* JsonParsing.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -259,7 +254,6 @@
 		D39629E321954F1B0034CCD6 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				D39629E7219550D00034CCD6 /* Mock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -518,10 +512,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D395AEEF21957E4A0035F5FC /* RootViewController.swift in Sources */,
-				D33C19C8219C4445002253C3 /* JsonParsing.swift in Sources */,
 				D37080402194179500C1C5DA /* Spark_DispplayTests.swift in Sources */,
 				D39629E621954F520034CCD6 /* FactTests.swift in Sources */,
-				D39629E8219550D00034CCD6 /* Mock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

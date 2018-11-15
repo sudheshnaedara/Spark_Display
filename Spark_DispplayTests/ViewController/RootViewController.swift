@@ -8,22 +8,22 @@
 
 import XCTest
 import Alamofire
+import ReachabilitySwift
 
 @testable import Spark_Dispplay
 
 class RootViewController: XCTestCase {
      var window: UIWindow?
     var initialVC: ViewController?
-     var rowArray = [Rows]()
+    var image: UIImage?
+    var imageView: UIImageView?
     
     override func setUp() {
         super.setUp()
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: ViewController())
-      let childView =   window?.rootViewController?.childViewControllers[0]
-        initialVC = childView as? ViewController
-        let _ = initialVC?.view
+        if let navController = UIApplication.shared.keyWindow!.rootViewController as? UINavigationController {
+            let childViewController = navController.childViewControllers.first
+            initialVC = childViewController as? ViewController
+        }
     }
     
     func testViewDidLoad() {
@@ -39,52 +39,62 @@ class RootViewController: XCTestCase {
     func testThatTableViewHasDataSource(){
         XCTAssertNotNil(self.initialVC?.tableview.dataSource, "TableView datasource can't be nil")
     }
-    
+
     func testTableViewCell() {
 
-//        _ = initialVC?.tableview.numberOfSections
-//        _ = initialVC?.tableview.numberOfRows(inSection: 0)
         guard let factCell = initialVC?.tableview.dequeueReusableCell(withIdentifier: "FactTableViewCellIdentifier") as? FactTableViewCell else {return}
         XCTAssertNotNil(factCell, "No Fact Cell Available")
+    
         let indexPath = NSIndexPath(row: 0, section: 0)
-
         if  self.initialVC?.rowArray.count != 0 {
-            
-            let dict = self.rowArray[indexPath.row]
+            let dict = self.initialVC?.rowArray[indexPath.row]
             factCell.viewModel = dict
-
-            let title = self.rowArray[indexPath.row].title
-            let description = self.rowArray[indexPath.row].description
+            let title = self.initialVC?.rowArray[indexPath.row].title
+            let description = self.initialVC?.rowArray[indexPath.row].description
             
             XCTAssertNotNil(factCell.awakeFromNib())
             XCTAssertNotNil(factCell.setSelected(true, animated: true))
-            
             XCTAssertEqual("Beavers", title)
             XCTAssertEqual("Beavers are second only to humans in their ability to manipulate and change their environment. They can measure up to 1.3 metres long. A group of beavers is called a colony", description)
-            XCTAssertNotNil(factCell.imgView.image)
-
+    
+            if factCell.imgView.image == nil {
+              image =  UIImage(named: "NoImg")
+                imageView = UIImageView(image: image)
+                if let unwrappedImageView = imageView {
+                    XCTAssert(unwrappedImageView.image != nil)
+                } else {
+                    XCTAssert(false)
+                }
+            }
         }
     }
+
     override func tearDown() {
         super.tearDown()
         initialVC = nil
     }
     
-    func testGettingJSON() {
+    func testAPICall() {
     let expectedResult = expectation(description: "Expecting a JSON data not nil")
     Alamofire.request("https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json").responseString { responseData in
             XCTAssertNil(responseData.result.error)
-            XCTAssertNotNil(responseData.result.value)
-      if let data = responseData.result.value?.data(using: .utf8) {
-         let json = parseData(JSONData: data)
-         XCTAssertEqual(json.title, "About Canada")
-        XCTAssertNotNil(json.rows,"Json Data not empty")
-        self.initialVC?.rowArray = json.rows
-        self.rowArray = json.rows
-        self.initialVC?.tableview.reloadData()
-        XCTAssertNotNil(self.rowArray)
-        let decodedJson = try! JSONDecoder().decode(Fact.self, from: data)
-        XCTAssertNotNil(decodedJson,"Decoded Json Cannot be NIl")
+         if let err = responseData.result.error {
+         let errorMessage = messageFromError(error: err as NSError)
+             XCTAssertNil(errorMessage)
+        }
+        let error = NSError.init()
+        let errorResult = messageFromError(error: error)
+        XCTAssertEqual(errorResult.0, "Alert")
+        XCTAssertEqual(errorResult.1, "Failed with error 0")
+        
+        XCTAssertNotNil(responseData.result.value)
+        if let data = responseData.result.value?.data(using: .utf8) {
+            let json = parseData(JSONData: data)
+            XCTAssertEqual(json.title, "About Canada")
+            XCTAssertNotNil(json.rows,"Json Data not empty")
+            self.initialVC?.tableview.reloadData()
+            let decodedJson = try! JSONDecoder().decode(Fact.self, from: data)
+            XCTAssertNotNil(decodedJson,"Decoded Json Cannot be NIl")
             expectedResult.fulfill()
         }
         }
@@ -94,35 +104,31 @@ class RootViewController: XCTestCase {
             }
         }
     }
-
         func testNoOfRows() {
-            XCTAssertEqual(self.initialVC?.tableView((self.initialVC?.tableview)!, numberOfRowsInSection: 0),rowArray.count)
+            XCTAssertEqual(self.initialVC?.tableView((self.initialVC?.tableview)!, numberOfRowsInSection: 0),14)
     }
-//    func testCellForRow() {
-//        initialVC?.tableview.reloadData()
-//        let cell =  initialVC?.tableview.cellForRow(at: IndexPath(row: 0, section: 0))
-//
-//        XCTAssertTrue(cell is FactTableViewCell)
-//
-//        let factCell = cell as? FactTableViewCell
-//         XCTAssertEqual("Beavers", factCell?.titleLabel.text)
-//         XCTAssertEqual("Beavers are second only to humans in their ability to manipulate and change their environment. They can measure up to 1.3 metres long. A group of beavers is called a colony", factCell?.descriptionLabel.text)
-//    }
-//
 
-    
+
     func testRefresh() {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(initialVC, action: #selector(ViewController.refresh(_:)), for: .valueChanged)
         refreshControl.sendActions(for: .valueChanged)
     }
-
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testNetworkConnection() {
+     initialVC?.checkNetworkConnection()
+          let networkStatus = ReachabilityManager.shared.reachability.currentReachabilityStatus
+         let expectedResult = expectation(description: "Expecting network Connection")
+        XCTAssertTrue(networkStatus  == .reachableViaWiFi, "Should be connected to internet")
+          expectedResult.fulfill()
+        waitForExpectations(timeout: 60) { (error) in
+            if let error = error {
+                XCTFail("error: \(error)")
+            }
         }
     }
-    
+ 
+    func testPerformanceExample() {
+        self.measure {
+        }
+    }
 }

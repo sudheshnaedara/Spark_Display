@@ -12,7 +12,6 @@ import Alamofire
 extension ViewController {
     func factAPICall () {
         Alamofire.request("https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json").responseString { responseData in
-
                 if let err = responseData.result.error {
                     let errorMessage = messageFromError(error: err as NSError)
                      let alertController = UIAlertController(title: errorMessage.0, message: errorMessage.1, preferredStyle: .alert)
