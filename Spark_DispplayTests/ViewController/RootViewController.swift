@@ -40,14 +40,19 @@ class RootViewController: XCTestCase {
         XCTAssertNotNil(self.initialVC?.tableview.dataSource, "TableView datasource can't be nil")
     }
     
-    func testRecoveryTableViewCell() {
+    func testTableViewCell() {
 
-        _ = initialVC?.tableview.numberOfSections
-        _ = initialVC?.tableview.numberOfRows(inSection: 0)
+//        _ = initialVC?.tableview.numberOfSections
+//        _ = initialVC?.tableview.numberOfRows(inSection: 0)
         guard let factCell = initialVC?.tableview.dequeueReusableCell(withIdentifier: "FactTableViewCellIdentifier") as? FactTableViewCell else {return}
         XCTAssertNotNil(factCell, "No Fact Cell Available")
         let indexPath = NSIndexPath(row: 0, section: 0)
-        if rowArray.count > 0 {
+
+        if  self.initialVC?.rowArray.count != 0 {
+            
+            let dict = self.rowArray[indexPath.row]
+            factCell.viewModel = dict
+
             let title = self.rowArray[indexPath.row].title
             let description = self.rowArray[indexPath.row].description
             
@@ -70,23 +75,29 @@ class RootViewController: XCTestCase {
     Alamofire.request("https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json").responseString { responseData in
             XCTAssertNil(responseData.result.error)
             XCTAssertNotNil(responseData.result.value)
-        print("responseData.result.value \(String(describing: responseData.result.value))")
+      if let data = responseData.result.value?.data(using: .utf8) {
+         let json = parseData(JSONData: data)
+         XCTAssertEqual(json.title, "About Canada")
+        XCTAssertNotNil(json.rows,"Json Data not empty")
+        self.initialVC?.rowArray = json.rows
+        self.rowArray = json.rows
+        self.initialVC?.tableview.reloadData()
+        XCTAssertNotNil(self.rowArray)
+        let decodedJson = try! JSONDecoder().decode(Fact.self, from: data)
+        XCTAssertNotNil(decodedJson,"Decoded Json Cannot be NIl")
             expectedResult.fulfill()
+        }
         }
         waitForExpectations(timeout: 60) { (error) in
             if let error = error {
                 XCTFail("error: \(error)")
             }
         }
-
-         initialVC?.tableview.reloadData()
     }
 
-    
-
-//    func testNoOfRows() {
-//        XCTAssertEqual(initialVC?.tableView((initialVC?.tableview)!, numberOfRowsInSection: 1),14)
-//    }
+        func testNoOfRows() {
+            XCTAssertEqual(self.initialVC?.tableView((self.initialVC?.tableview)!, numberOfRowsInSection: 0),rowArray.count)
+    }
 //    func testCellForRow() {
 //        initialVC?.tableview.reloadData()
 //        let cell =  initialVC?.tableview.cellForRow(at: IndexPath(row: 0, section: 0))
