@@ -80,7 +80,7 @@ extension ViewController :  UITableViewDataSource{
         cell.viewModel = dict
         return cell
     }
-    
+    //Checking for Azure
     func checkNetworkConnection() {
         refreshControl.beginRefreshing()
         let networkStatus = ReachabilityManager.shared.reachability.currentReachabilityStatus
